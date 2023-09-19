@@ -25,7 +25,7 @@ public class App {
                 
 
             } else if (choice.equals("4")) {
-                System.out.println("Programmet avslutades.");
+                exit();
                 break;
                 }        
                 
@@ -75,6 +75,10 @@ public class App {
 
     public double showBalance() {
         return this.balance;
+    }
+
+    public static void exit() {
+        System.out.println("Programmet avslutades.");
     }
 
 }
