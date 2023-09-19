@@ -20,7 +20,7 @@ public class App {
             }
 
             if (choice.equals("1")) {
-                System.out.println("Saldo: " + account.showBalance());
+                System.out.println("Saldo: " + account.showBalance() + "kr.");
                 continue;
                 
 
@@ -34,7 +34,7 @@ public class App {
                 while (!scan.hasNextDouble()) {
                 scan.next();
 
-                System.out.println("Du gav inte en siffra.");
+                System.out.println("Du gav inte en siffra. Försök igen.");
             }
 
             scan.hasNextDouble();
@@ -59,17 +59,33 @@ public class App {
     public double balance = 0;
     public void deposit(double depositAmount) {
 
+        while (depositAmount > 0) {
         this.balance += depositAmount;
         System.out.println("Du satte in " + depositAmount + "kr på kontot.");
+        break;
+        } 
+
+        if (depositAmount <= 0) {
+            System.out.println("Du kan inte välja en negativ siffra.");
+        }
+       
     }
 
     public void withdraw(double withdrawAmount) {
 
-        if (this.balance >= withdrawAmount) {
+        while (withdrawAmount > 0) {
+              if (this.balance >= withdrawAmount) {
                 this.balance -= withdrawAmount;
                 System.out.println("Du tog ut " + withdrawAmount + "kr från kontot.");
-        } else {
+                break;
+        }
+
+        } if (withdrawAmount > this.balance) {
             System.out.println("Du har inte tillräckligt med pengar för att ta ut " + withdrawAmount + "kr från kontot.");
+        }
+
+        if (withdrawAmount <= 0) {
+            System.out.println("Du kan inte välja en negativ siffra.");
         }
     }
 
