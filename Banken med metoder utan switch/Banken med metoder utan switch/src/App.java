@@ -66,7 +66,7 @@ public class App {
         } 
 
         if (depositAmount <= 0) {
-            System.out.println("Du kan inte välja en negativ siffra.");
+            System.out.println("Du kan inte sätta in negativt med pengar.");
         }
        
     }
@@ -85,7 +85,7 @@ public class App {
         }
 
         if (withdrawAmount <= 0) {
-            System.out.println("Du kan inte välja en negativ siffra.");
+            System.out.println("Du kan inte ta ut negativt med pengar.");
         }
     }
 
