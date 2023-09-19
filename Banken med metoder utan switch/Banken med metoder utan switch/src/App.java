@@ -73,7 +73,7 @@ public class App {
 
     public void withdraw(double withdrawAmount) {
 
-        while (withdrawAmount > 0) {
+        while (withdrawAmount > 0 && withdrawAmount <= this.balance) {
               if (this.balance >= withdrawAmount) {
                 this.balance -= withdrawAmount;
                 System.out.println("Du tog ut " + withdrawAmount + "kr från kontot.");
