@@ -74,7 +74,7 @@ public class App {
         }
 
         if (depositAmount <= 0) {
-            System.out.println("Du kan varken sätta in 0 eller negativt antal pengar.");
+            System.out.println("Du kan varken sätta in 0 eller ett negativt antal pengar.");
         }
 
     }
