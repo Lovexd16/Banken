@@ -90,8 +90,8 @@ public class App {
 
         }
         if (withdrawAmount > this.balance) {
-            System.out
-                    .println("Du har inte tillräckligt med pengar för att ta ut " + withdrawAmount + "kr från kontot.");
+
+                System.out.println("Du har inte tillräckligt med pengar för att ta ut " + withdrawAmount + "kr från kontot.");
         }
 
         if (withdrawAmount <= 0) {
