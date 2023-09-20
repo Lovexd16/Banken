@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class App {
+public class utanSwitch {
     public static void main(String[] args) throws Exception {
 
-        App account = new App();
+        utanSwitch account = new utanSwitch();
         Scanner input = new Scanner(System.in);
         Scanner scan = new Scanner( System.in);
         boolean run = true;
