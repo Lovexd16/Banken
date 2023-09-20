@@ -1,9 +1,9 @@
 import java.util.Scanner;
 
-public class utanSwitch {
+public class App {
     public static void main(String[] args) throws Exception {
 
-        utanSwitch account = new utanSwitch();
+        App account = new App();
         Scanner input = new Scanner(System.in);
         Scanner scan = new Scanner( System.in);
         boolean run = true;
@@ -77,7 +77,6 @@ public class utanSwitch {
               if (this.balance >= withdrawAmount) {
                 this.balance -= withdrawAmount;
                 System.out.println("Du tog ut " + withdrawAmount + "kr från kontot.");
-                break;
         }
 
         } if (withdrawAmount > this.balance) {
