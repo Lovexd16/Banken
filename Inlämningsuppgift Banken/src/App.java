@@ -74,7 +74,7 @@ public class App {
         }
 
         if (depositAmount <= 0) {
-            System.out.println("Du kan inte sätta in negativt med pengar.");
+            System.out.println("Du kan varken sätta in 0 eller negativt antal pengar.");
         }
 
     }
@@ -86,17 +86,17 @@ public class App {
                 this.balance -= withdrawAmount;
                 System.out.println("Du tog ut " + withdrawAmount + "kr från kontot.");
                 break;
-            }
+
+            } else if (withdrawAmount > this.balance) {
+
+            System.out.println("Du har inte tillräckligt med pengar för att ta ut " + withdrawAmount + "kr från kontot.");
+
+        } else if (withdrawAmount <= 0) {
+            System.out.println("Du kan varken ta ut 0 eller ett negativt antal pengar.");
+        }
 
         }
-        if (withdrawAmount > this.balance) {
 
-                System.out.println("Du har inte tillräckligt med pengar för att ta ut " + withdrawAmount + "kr från kontot.");
-        }
-
-        if (withdrawAmount <= 0) {
-            System.out.println("Du kan inte ta ut negativt med pengar.");
-        }
     }
 
     public double showBalance() {
