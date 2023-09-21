@@ -106,13 +106,7 @@ public class App {
         System.out.println("Hur mycket pengar vill du sätta in?");
     }
 
-    //För case 2. Fångar upp summan man skrev. Kallar på deposit metoden.
-    public static void getDepositAmount() {
-        double depositAmount = scan.nextDouble();
-        account.deposit(depositAmount);
-    }
-
-    //För case 2. Uppdaterar saldot och berättar hur mycket man satte in.
+     //För case 2. Uppdaterar saldot och berättar hur mycket man satte in.
     public void deposit(double depositAmount) {
 
         while (depositAmount > 0) {
@@ -128,18 +122,18 @@ public class App {
 
     }
 
+    //För case 2. Fångar upp summan man skrev. Kallar på deposit metoden.
+    public static void getDepositAmount() {
+        double depositAmount = scan.nextDouble();
+        account.deposit(depositAmount);
+    }
+
     //För case 3. Frågar hur mycket man vill ta ut.
     public static void withdrawAmountQuestion() {
         System.out.println("Hur mycket pengar vill du ta ut?");
     }
 
-        //För case 3. Fångar upp summan man skrev. Kallar på withdraw metoden.
-        public static void getWithdrawAmount() {
-        double withdrawAmount = scan.nextDouble();
-        account.withdraw(withdrawAmount);
-    }
-
-    //För case 3. Uppdaterar saldot och berättar hur mycket man tagit ut. Kollar att man inte tar ut mer än vad saldot har, och att man tar ut mer än 0kr. Skriver även ut hur mycket man tog ut.
+        //För case 3. Uppdaterar saldot och berättar hur mycket man tagit ut. Kollar att man inte tar ut mer än vad saldot har, och att man tar ut mer än 0kr. Skriver även ut hur mycket man tog ut.
     public void withdraw(double withdrawAmount) {
 
             if (this.balance >= withdrawAmount && withdrawAmount > 0) {
@@ -157,6 +151,13 @@ public class App {
         }
 
     }
+
+        //För case 3. Fångar upp summan man skrev. Kallar på withdraw metoden.
+        public static void getWithdrawAmount() {
+        double withdrawAmount = scan.nextDouble();
+        account.withdraw(withdrawAmount);
+    }
+
 
     //För case 2 och 3. Kollar så man skrivit en siffra. Om man skrev något annat kommer ett felmeddelande.
     public static void checkAmount() {
