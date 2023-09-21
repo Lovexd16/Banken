@@ -4,6 +4,7 @@ public class App {
 
     public static boolean run = true;
     public static Scanner scan = new Scanner(System.in);
+    public double balance = 0;
     public static void main(String[] args) throws Exception {
 
         App account = new App();
@@ -54,8 +55,6 @@ public class App {
         scan.close();
 
     }
-
-    public double balance = 0;
 
     public void deposit(double depositAmount) {
 
