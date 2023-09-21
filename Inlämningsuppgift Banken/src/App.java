@@ -165,7 +165,6 @@ public class App {
                 scan.next();
 
                 System.out.println("Du gav inte en siffra.");
-                return;
         }
     }
 
