@@ -81,20 +81,16 @@ public class App {
 
     public void withdraw(double withdrawAmount) {
 
-        while (withdrawAmount > 0 && withdrawAmount <= this.balance) {
-            if (this.balance >= withdrawAmount) {
+            if (this.balance >= withdrawAmount && withdrawAmount > 0) {
                 this.balance -= withdrawAmount;
                 System.out.println("Du tog ut " + withdrawAmount + "kr från kontot.");
-                break;
 
             } else if (withdrawAmount > this.balance) {
 
             System.out.println("Du har inte tillräckligt med pengar för att ta ut " + withdrawAmount + "kr från kontot.");
 
-        } else if (withdrawAmount <= 0) {
+        } else {
             System.out.println("Du kan varken ta ut 0 eller ett negativt antal pengar.");
-        }
-
         }
 
     }
