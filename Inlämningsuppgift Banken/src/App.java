@@ -19,7 +19,8 @@ public class App {
             switch (choice) {
 
                 case "1":
-                    System.out.println("Du har " + account.showBalance() + "kr på kontot.");
+                    showBalanceMessage();
+
                     break;
 
                 case "2":
@@ -28,8 +29,8 @@ public class App {
 
                     checkAmount();
 
-                    double depositAmount = scan.nextDouble();
-                    account.deposit(depositAmount);
+                    getDepositAmount();
+
                     break;
 
                 case "3":
@@ -37,16 +38,17 @@ public class App {
 
                     checkAmount();
 
-                    double withdrawAmount = scan.nextDouble();
-                    account.withdraw(withdrawAmount);
+                    getWithdrawAmount();
+
                     break;
 
                 case "4":
                     exit();
+
                     break;
 
                 default:
-                    System.out.println("Du valde inte något av alternativen.");
+                    messageIfInvalidChoice();
 
             }
 
@@ -66,6 +68,23 @@ public class App {
         
     }
 
+    public static void messageIfInvalidChoice() {
+        System.out.println("Du valde inte något av alternativen.");
+    }
+
+      public static void showBalanceMessage() {
+        System.out.println("Du har " + account.showBalance() + "kr på kontot.");
+    }
+
+    public static void depositAmountQuestion() {
+        System.out.println("Hur mycket pengar vill du sätta in?");
+    }
+
+    public static void getDepositAmount() {
+        double depositAmount = scan.nextDouble();
+        account.deposit(depositAmount);
+    }
+
     public void deposit(double depositAmount) {
 
         while (depositAmount > 0) {
@@ -78,10 +97,6 @@ public class App {
             System.out.println("Du kan varken sätta in 0 eller ett negativt antal pengar.");
         }
 
-    }
-
-    public static void depositAmountQuestion() {
-        System.out.println("Hur mycket pengar vill du sätta in?");
     }
 
     public static void withdrawAmountQuestion() {
@@ -102,6 +117,11 @@ public class App {
             System.out.println("Du kan varken ta ut 0 eller ett negativt antal pengar.");
         }
 
+    }
+
+    public static void getWithdrawAmount() {
+        double withdrawAmount = scan.nextDouble();
+        account.withdraw(withdrawAmount);
     }
 
     public static void checkAmount() {
