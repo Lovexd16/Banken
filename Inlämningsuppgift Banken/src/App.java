@@ -106,7 +106,7 @@ public class App {
         System.out.println("Hur mycket pengar vill du sätta in?");
     }
 
-    //För case 2. Fångar upp summan man skrev.
+    //För case 2. Fångar upp summan man skrev. Kallar på deposit metoden.
     public static void getDepositAmount() {
         double depositAmount = scan.nextDouble();
         account.deposit(depositAmount);
@@ -133,7 +133,7 @@ public class App {
         System.out.println("Hur mycket pengar vill du ta ut?");
     }
 
-        //För case 3. Fångar upp summan man skrev.
+        //För case 3. Fångar upp summan man skrev. Kallar på withdraw metoden.
         public static void getWithdrawAmount() {
         double withdrawAmount = scan.nextDouble();
         account.withdraw(withdrawAmount);
