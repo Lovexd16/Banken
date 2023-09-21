@@ -10,12 +10,12 @@ public class App {
 
         Scanner input = new Scanner(System.in);
 
-        //Välkomst meddelande. Visar start summan (0kr).
+        //Kallar på metod. (Välkomst meddelande. Visar start summan (0kr).)
         welcome();
 
         while (run) {
 
-            //Visar menyn med de 4 olika valen.
+            //Kallar på metod. (Visar menyn med de 4 olika valen.)
             showMenu();
             String choice = input.nextLine();
 
@@ -23,47 +23,47 @@ public class App {
 
                 case "1":
 
-                    //Visar saldot.
+                    //Kallar på metod. (Visar saldot.)
                     showBalanceMessage();
 
                     break;
 
                 case "2":
 
-                    //Ställer frågan hur mycket man vill sätta in.
+                    //Kallar på metod. (Ställer frågan hur mycket man vill sätta in.)
                     depositAmountQuestion();
 
-                    //Kollar så att det man skriver in är ett tal. Om inte kommer felmeddelande.
+                    //Kallar på metod. (Kollar så att det man skriver in är ett tal. Om inte kommer felmeddelande.)
                     checkAmount();
 
-                    //Scannar siffran man skrev och uppdaterar saldot.
+                    //Kallar på metod. (Scannar siffran man skrev och uppdaterar saldot.)
                     getDepositAmount();
 
                     break;
 
                 case "3":
 
-                    //Ställer frågan hur mycket man vill ta ut.
+                    //Kallar på metod. (Ställer frågan hur mycket man vill ta ut.)
                     withdrawAmountQuestion();
 
-                    //Kollar så att det man skriver in är ett tal. Om inte kommer felmeddelande.
+                    //Kallar på metod. (Kollar så att det man skriver in är ett tal. Om inte kommer felmeddelande.)
                     checkAmount();
 
-                    //Scannar siffran man skrev och uppdaterar saldot.
+                    //Kallar på metod. (Scannar siffran man skrev och uppdaterar saldot.)
                     getWithdrawAmount();
 
                     break;
 
                 case "4":
 
-                    //Avslutar programmet och skriver en syso att programmet har avslutats.
+                    //Kallar på metod. (Avslutar programmet och skriver en syso att programmet har avslutats.)
                     exit();
 
                     break;
 
                 default:
 
-                    //Syso som berättar att man inte valt ett av alternativen.
+                    //Kallar på metod. (Syso som berättar att man inte valt ett av alternativen.)
                     messageIfInvalidChoice();
 
             }
@@ -81,7 +81,7 @@ public class App {
         return this.balance;
     }
 
-    //Meddelande man får när man startar programmet. Visar start summan (0kr).
+    //Tar hjälp av showBalance metoden. Meddelande man får när man startar programmet. Visar start summan (0kr).
     public static void welcome() {
         System.out.println("Välkommen till banken! Du har " + account.showBalance() + "kr på kontot.");
     }
@@ -96,7 +96,7 @@ public class App {
         System.out.println("Du valde inte något av alternativen.");
     }
 
-    //För case 1. Kallar på showBalance metoden, och visar hur mycket man har på kontot.
+    //För case 1. Tar hjälp av showBalance metoden. Visar hur mycket man har på kontot.
       public static void showBalanceMessage() {
         System.out.println("Du har " + account.showBalance() + "kr på kontot.");
     }
@@ -122,7 +122,7 @@ public class App {
 
     }
 
-    //För case 2. Fångar upp summan man skrev. Kallar på deposit metoden.
+    //För case 2. Fångar upp summan man skrev.
     public static void getDepositAmount() {
         double depositAmount = scan.nextDouble();
         account.deposit(depositAmount);
@@ -152,7 +152,7 @@ public class App {
 
     }
 
-        //För case 3. Fångar upp summan man skrev. Kallar på withdraw metoden.
+        //För case 3. Fångar upp summan man skrev.
         public static void getWithdrawAmount() {
         double withdrawAmount = scan.nextDouble();
         account.withdraw(withdrawAmount);
