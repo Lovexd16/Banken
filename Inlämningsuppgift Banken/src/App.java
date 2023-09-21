@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class App {
 
     public static boolean run = true;
+    public static Scanner scan = new Scanner(System.in);
     public static void main(String[] args) throws Exception {
 
         App account = new App();
         Scanner input = new Scanner(System.in);
-        Scanner scan = new Scanner(System.in);
 
         System.out.println("Välkommen till banken! Du har " + account.showBalance() + "kr på kontot.");
 
@@ -24,11 +24,7 @@ public class App {
                 case "2":
                     System.out.println("Hur mycket pengar vill du sätta in?");
 
-                    while (!scan.hasNextDouble()) {
-                        scan.next();
-
-                        System.out.println("Du gav inte en siffra. \nHur mycket vill du sätta in?");
-                    }
+                    checkAmount();
 
                     double depositAmount = scan.nextDouble();
                     account.deposit(depositAmount);
@@ -37,11 +33,7 @@ public class App {
                 case "3":
                     System.out.println("Hur mycket pengar vill du ta ut?");
 
-                    while (!scan.hasNextDouble()) {
-                        scan.next();
-
-                        System.out.println("Du gav inte en siffra. \nHur mycket vill du ta ut?");
-                    }
+                    checkAmount();
 
                     double withdrawAmount = scan.nextDouble();
                     account.withdraw(withdrawAmount);
@@ -93,6 +85,15 @@ public class App {
             System.out.println("Du kan varken ta ut 0 eller ett negativt antal pengar.");
         }
 
+    }
+
+    public static void checkAmount() {
+                while (!scan.hasNextDouble()) {
+                scan.next();
+
+                System.out.println("Du gav inte en siffra.");
+                return;
+        }
     }
 
     public double showBalance() {
