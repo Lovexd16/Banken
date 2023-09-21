@@ -1,12 +1,13 @@
 import java.util.Scanner;
 
 public class App {
+
+    public static boolean run = true;
     public static void main(String[] args) throws Exception {
 
         App account = new App();
         Scanner input = new Scanner(System.in);
         Scanner scan = new Scanner(System.in);
-        boolean run = true;
 
         System.out.println("Välkommen till banken! Du har " + account.showBalance() + "kr på kontot.");
 
@@ -48,7 +49,6 @@ public class App {
 
                 case "4":
                     exit();
-                    run = false;
                     break;
 
                 default:
@@ -101,6 +101,7 @@ public class App {
 
     public static void exit() {
         System.out.println("Programmet avslutades.");
+        run = false;
     }
 
 }
