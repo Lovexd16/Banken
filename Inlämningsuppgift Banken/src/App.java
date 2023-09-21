@@ -139,7 +139,7 @@ public class App {
         account.withdraw(withdrawAmount);
     }
 
-    //För case 3. Kollar att man inte tar ut mer än vad saldot har, och att man tar ut mer än 0kr. Skriver även ut hur mycket man tog ut.
+    //För case 3. Uppdaterar saldot och berättar hur mycket man tagit ut. Kollar att man inte tar ut mer än vad saldot har, och att man tar ut mer än 0kr. Skriver även ut hur mycket man tog ut.
     public void withdraw(double withdrawAmount) {
 
             if (this.balance >= withdrawAmount && withdrawAmount > 0) {
