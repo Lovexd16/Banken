@@ -11,7 +11,7 @@ public class App {
         Scanner input = new Scanner(System.in);
 
         //Kallar på metod. (Välkomst meddelande. Visar start summan (0kr).)
-        welcome();
+        showWelcomeMessage();
 
         while (run) {
 
@@ -34,9 +34,9 @@ public class App {
                     depositAmountQuestion();
 
                     //Kallar på metod. (Kollar så att det man skriver in är ett tal. Om inte kommer felmeddelande.)
-                    checkAmount();
+                    checkAmountDouble();
 
-                    //Kallar på metod. (Scannar siffran man skrev och uppdaterar saldot.)
+                    //Kallar på metod. (Scannar siffran man skrev)
                     getDepositAmount();
 
                     break;
@@ -47,9 +47,9 @@ public class App {
                     withdrawAmountQuestion();
 
                     //Kallar på metod. (Kollar så att det man skriver in är ett tal. Om inte kommer felmeddelande.)
-                    checkAmount();
+                    checkAmountDouble();
 
-                    //Kallar på metod. (Scannar siffran man skrev och uppdaterar saldot.)
+                    //Kallar på metod. (Scannar siffran man skrev)
                     getWithdrawAmount();
 
                     break;
@@ -82,7 +82,7 @@ public class App {
     }
 
     //Tar hjälp av showBalance metoden. Meddelande man får när man startar programmet. Visar start summan (0kr).
-    public static void welcome() {
+    public static void showWelcomeMessage() {
         System.out.println("Välkommen till banken! Du har " + account.showBalance() + "kr på kontot.");
     }
 
@@ -160,7 +160,7 @@ public class App {
 
 
     //För case 2 och 3. Kollar så man skrivit en siffra. Om man skrev något annat kommer ett felmeddelande.
-    public static void checkAmount() {
+    public static void checkAmountDouble() {
                 while (!scan.hasNextDouble()) {
                 scan.next();
 
