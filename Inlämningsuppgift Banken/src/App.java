@@ -5,15 +5,15 @@ public class App {
     public static boolean run = true;
     public static Scanner scan = new Scanner(System.in);
     public double balance = 0;
+    public static App account = new App();
     public static void main(String[] args) throws Exception {
 
-        App account = new App();
         Scanner input = new Scanner(System.in);
 
-        System.out.println("Välkommen till banken! Du har " + account.showBalance() + "kr på kontot.");
+        welcome();
 
         while (run) {
-            System.out.println("1. Se saldo \n2. Sätt in pengar \n3. Ta ut pengar \n4. Avsluta");
+            showMenu();
             String choice = input.nextLine();
 
             switch (choice) {
@@ -23,7 +23,8 @@ public class App {
                     break;
 
                 case "2":
-                    System.out.println("Hur mycket pengar vill du sätta in?");
+
+                    depositAmountQuestion();
 
                     checkAmount();
 
@@ -32,7 +33,7 @@ public class App {
                     break;
 
                 case "3":
-                    System.out.println("Hur mycket pengar vill du ta ut?");
+                    withdrawAmountQuestion();
 
                     checkAmount();
 
@@ -56,6 +57,15 @@ public class App {
 
     }
 
+    public static void welcome() {
+        System.out.println("Välkommen till banken! Du har " + account.showBalance() + "kr på kontot.");
+    }
+
+    public static void showMenu() {
+        System.out.println("1. Se saldo \n2. Sätt in pengar \n3. Ta ut pengar \n4. Avsluta");
+        
+    }
+
     public void deposit(double depositAmount) {
 
         while (depositAmount > 0) {
@@ -68,6 +78,14 @@ public class App {
             System.out.println("Du kan varken sätta in 0 eller ett negativt antal pengar.");
         }
 
+    }
+
+    public static void depositAmountQuestion() {
+        System.out.println("Hur mycket pengar vill du sätta in?");
+    }
+
+    public static void withdrawAmountQuestion() {
+        System.out.println("Hur mycket pengar vill du ta ut?");
     }
 
     public void withdraw(double withdrawAmount) {
